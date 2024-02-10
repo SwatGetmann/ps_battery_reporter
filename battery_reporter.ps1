@@ -3,7 +3,9 @@ $dt = Get-Date -Format "yyMMdd"
 $char = if (Test-Path ".\$dt.log")
 {
     $last_char = Get-Content -Path ".\$dt.log" -Tail 1
-    [char](([int][char]$last_char)++)
+    $last_char = ([int][char]$last_char)
+    $last_char = $last_char + 1
+    [char]$last_char
 }
 else
 {
