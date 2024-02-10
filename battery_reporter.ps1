@@ -11,3 +11,5 @@ else
 }
 
 powercfg.exe /batteryreport /output "battery-report-$dt-$char.html"
+
+Add-Content ".\$dt.log" $char
